@@ -5,7 +5,6 @@ This program measures the distance using the sonar.
 """
 
 from microbit import *
-import spi
 
 sensor = None
 
@@ -29,7 +28,7 @@ class HCSR04:
         pre = 0
         post = 0
         k = -1
-        length = 500
+        length = 50
 
         resp = bytearray(length)
         resp[0] = 0xFF
@@ -64,7 +63,7 @@ class HCSR04:
         return dist
 
 
-sensor = HCSR04()
+sonar = HCSR04()
 
 display.show(Image.HAPPY)
 
@@ -72,7 +71,8 @@ while True:
     if button_a.was_pressed():
         display.clear()
 
-        distance = sensor.distance_mm()
+        distance = sonar.distance_mm()
+        sleep(500)
 
         display.scroll(str(distance))
         display.show(Image.HAPPY)
