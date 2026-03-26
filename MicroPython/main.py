@@ -6,7 +6,12 @@ This program measures the distance using the sonar.
 
 from microbit import *
 
+# variables
 sensor = None
+distance = None
+
+# Show Happy Face
+display.show(Image.HAPPY)
 
 
 # library
@@ -56,23 +61,16 @@ class HCSR04:
         return dist
 
 
-# Initialize the sonar object
+# assign the class library to the sonar variable
 sonar = HCSR04()
-
-# Initial state
-display.show(Image.HAPPY)
 
 while True:
     if button_a.was_pressed():
-        # Process: Clear the screen for new output
         display.clear()
 
-        # Process: Get distance in mm and convert to cm
-        distance = sonar.distance_mm() / 10
+        # convert distance to cm
+        distance = (str(sonar.distance_mm() / 10)) + " cm"
 
-        # Process: Short pause for stability
-        sleep(500)
-
-        # Output: Display the result and reset icon
+        # show distance to user
         display.scroll(str(distance))
         display.show(Image.HAPPY)
