@@ -7,7 +7,7 @@ This program measures the distance using the sonar.
 from microbit import *
 
 # variables
-sensor = None
+sonar = None
 distance = None
 
 # Show Happy Face
@@ -74,3 +74,4 @@ while True:
         # show distance to user
         display.scroll(str(distance))
         display.show(Image.HAPPY)
+        sleep(500)
