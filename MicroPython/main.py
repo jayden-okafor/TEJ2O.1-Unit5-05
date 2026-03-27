@@ -72,7 +72,7 @@ while True:
         display.clear()
 
         # convert distance to cm
-        distance = str(int(sonar.distance_mm() // 10)) + " cm"
+        distance = (str(sonar.distance_mm() // 10)) + " cm"
 
         # show distance to user
         display.scroll(distance)
