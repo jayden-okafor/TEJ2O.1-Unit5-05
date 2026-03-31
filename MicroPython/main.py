@@ -34,7 +34,7 @@ class HCSR04:
     def distance_mm(self):
         pre = 0
         post = 0
-        k = -1
+        k = 0
         length = self.length
         resp = self.resp
 
