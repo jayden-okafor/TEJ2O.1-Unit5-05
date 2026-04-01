@@ -6,7 +6,7 @@
 */
 
 // variable
-let distanceToObject:number = 0
+let distanceToObject:number = 0 
 basic.clearScreen()
 
 // show happy face
